@@ -12,6 +12,12 @@
 
 #include "common_server_core.h"
 
+/*
+ * These callbacks are used by client and server processes to receive incoming
+ * requests and responses and also the errors that are found during serialization
+ * and deserialization of a message.
+ */
+
 void error_callback(void *obj, int ref_id, int error_code)
 {
     struct client_context_t *context = (struct client_context_t *) obj;

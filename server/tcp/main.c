@@ -52,6 +52,12 @@ int main(int argc, char **argv)
     }
 
     // ----------- 3. Prepare backlog ------------------
+
+    /*
+     * General Info: The backlog argument defines the maximum length
+     * to which the queue of pending connections for sockfd may grow.
+     * In this case it is 10
+     */
     result = listen(server_sd, 10);
     if (result == -1)
     {

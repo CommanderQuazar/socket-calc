@@ -121,6 +121,13 @@ bool_t _parse_fields(struct calc_proto_ser_t *ser, char **fields,
     return TRUE;
 }
 
+/*
+ * The _parse_req_and_notify function tries to extract the fields and
+ * resurrect the request object. Then, it notifies the registered observer,
+ * in this case the server object that is waiting for a request through
+ * the callback functions, to proceed with the request object.
+ */
+
 void _parse_req_and_notify(struct calc_proto_ser_t *ser)
 {
     char *fields[FIELD_COUNT_PER_REQ_MESSAGE];
